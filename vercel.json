@@ -1,15 +1,7 @@
 {
-    "version": 2,
-    "builds": [
-      {
-        "src": "server/index.js", 
-        "use": "@vercel/node"
-      }
-    ],
     "routes": [
-      {
-        "src": "/(.*)",
-        "dest": "client/vite-project/index.html"
-      }
+      { "src": "/api/(.*)", "dest": "/server/$1" },  // Route for server
+      { "src": "/(.*)", "dest": "/client/$1" }       // Route for client
     ]
   }
+  
